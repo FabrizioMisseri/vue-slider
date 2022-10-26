@@ -58,6 +58,10 @@ createApp({
             } else {
                 this.sliderSelector = this.slides.length - 1;
             }
+        },
+
+        moveToImage: function(index){
+            this.sliderSelector = index;
         }
     }
 }).mount("#app");

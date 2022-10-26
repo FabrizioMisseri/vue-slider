@@ -28,23 +28,19 @@
                 </div>
 
                 <div class="thumbs">
+
                     <div class="prev" @click="showPrevSlide"></div>
                     <div class="next" @click="showNextSlide"></div>
-                    <div class="thumb"  v-for="(image, index) in slides" :class="sliderSelector === index ? 'active' : '' ">
+
+                    <div class="thumb"  
+                    v-for="(image, index) in slides"
+                    @click="moveToImage(index)"
+                    :class="sliderSelector === index ? 'active' : '' ">
+
                         <img :src="image.image" alt="Svezia"/>
+
                     </div>
-                    <!-- <div class="thumb">
-                        <img src="img/02.jpg" alt="Svizzera" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/03.jpg" alt="Gran Bretagna" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/04.jpg" alt="Germania" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/05.jpg" alt="Paradise" />
-                    </div> -->
+                    
                 </div>
 
             </div>
