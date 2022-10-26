@@ -37,9 +37,26 @@ createApp({
                     text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis.',
                 }
             ],
-
-            image: 'img/01.jpg'
             
+            sliderSelector: 0,
+        }
+    },
+
+    methods: {
+        showNextSlide: function(){
+            if (this.sliderSelector < this.slides.length - 1) {
+                this.sliderSelector++;
+            } else {
+                this.sliderSelector = 0;
+            }
+        },
+
+        showPrevSlide: function(){
+            if (this.sliderSelector > 0) {
+                this.sliderSelector--;
+            } else {
+                this.sliderSelector = this.slides.length - 1;
+            }
         }
     }
 }).mount("#app");
